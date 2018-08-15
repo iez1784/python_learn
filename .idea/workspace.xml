@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aeb8666-3214-4702-acbc-60b5c9ccadd9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DiveIntoPython/Chapter 1_Install_Python/Charpter_1_InstallPython.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DiveIntoPython/Chapter 1_Install_Python/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program/Charpter_2_First_Python_Program.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alien_invasion/bullet.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alien_invasion/alien.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/.idea/misc.xml" afterPath="$PROJECT_DIR$/alien_invasion/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/.idea/workspace.xml" afterPath="$PROJECT_DIR$/alien_invasion/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/alien_invasion.py" afterPath="$PROJECT_DIR$/alien_invasion/alien_invasion.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/game_functions.py" afterPath="$PROJECT_DIR$/alien_invasion/game_functions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/settings.py" afterPath="$PROJECT_DIR$/alien_invasion/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/ship.py" afterPath="$PROJECT_DIR$/alien_invasion/ship.py" />
     </list>
     <ignored path="python_learn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,9 +19,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python_learn$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1534242241649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invasion" />
+    <SUITE FILE_PATH="coverage/python_learn$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1534330735654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invasion" />
     <SUITE FILE_PATH="coverage/python_learn$Charpter_2_First_Python_Program.coverage" NAME="Charpter_2_First_Python_Program Coverage Results" MODIFIED="1533880742753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program" />
-    <SUITE FILE_PATH="coverage/python_learn$game_functions.coverage" NAME="game_functions Coverage Results" MODIFIED="1534241508346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invasion" />
+    <SUITE FILE_PATH="coverage/python_learn$game_functions.coverage" NAME="game_functions Coverage Results" MODIFIED="1534328746370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invasion" />
     <SUITE FILE_PATH="coverage/python_learn$charpter_4_Action_List.coverage" NAME="charpter_4_Action_List Coverage Results" MODIFIED="1529377233155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonCrashCourse/Charpter_4_Action_List" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -43,24 +36,24 @@
       <file leaf-file-name="alien_invasion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alien_invasion/alien_invasion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="362">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
+                <element signature="e#198#932#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bullet.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bullet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alien_invasion/bullet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="362">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
                 <element signature="e#182#652#0" expanded="true" />
-                <element signature="e#684#807#0" expanded="true" />
                 <element signature="e#844#919#0" expanded="true" />
               </folding>
             </state>
@@ -70,23 +63,49 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alien_invasion/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="423">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="e#103#641#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game_functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="game_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/alien_invasion/game_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="286">
+              <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
               <folding>
                 <element signature="e#25#35#0" expanded="true" />
-                <element signature="e#500#650#0" expanded="true" />
-                <element signature="e#711#1032#0" expanded="true" />
-                <element signature="e#1094#1318#0" expanded="true" />
+                <element signature="e#197#524#0" expanded="true" />
+                <element signature="e#569#719#0" expanded="true" />
+                <element signature="e#780#1101#0" expanded="true" />
+                <element signature="e#1171#1442#0" expanded="true" />
+                <element signature="e#1478#1655#0" expanded="true" />
+                <element signature="e#1714#1904#0" expanded="true" />
+                <element signature="e#1963#2949#0" expanded="true" />
+                <element signature="e#3007#3185#0" expanded="true" />
+                <element signature="e#3265#3542#0" expanded="true" />
+                <element signature="e#3609#3800#0" expanded="true" />
+                <element signature="e#3846#3930#0" expanded="true" />
+                <element signature="e#3981#4144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alien.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/alien_invasion/alien.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="31" column="89" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="89" />
+              <folding>
+                <element signature="e#25#38#0" expanded="true" />
+                <element signature="e#168#586#0" expanded="true" />
+                <element signature="e#618#682#0" expanded="true" />
+                <element signature="e#887#1088#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,10 +150,11 @@
         <option value="$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program/readme.md" />
         <option value="$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program/Charpter_2_First_Python_Program.py" />
         <option value="$PROJECT_DIR$/alien_invasion/ship.py" />
+        <option value="$PROJECT_DIR$/alien_invasion/bullet.py" />
+        <option value="$PROJECT_DIR$/alien_invasion/settings.py" />
+        <option value="$PROJECT_DIR$/alien_invasion/alien.py" />
         <option value="$PROJECT_DIR$/alien_invasion/alien_invasion.py" />
         <option value="$PROJECT_DIR$/alien_invasion/game_functions.py" />
-        <option value="$PROJECT_DIR$/alien_invasion/settings.py" />
-        <option value="$PROJECT_DIR$/alien_invasion/bullet.py" />
       </list>
     </option>
   </component>
@@ -192,6 +212,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="python_learn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python_learn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python_learn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alien_invasion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,9 +585,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1432" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.256447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.256447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -765,14 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program/Charpter_2_First_Python_Program.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -806,46 +832,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alien_invasion/alien_invasion.py">
+    <entry file="file://$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program/Charpter_2_First_Python_Program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="228">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alien_invasion/bullet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
             <element signature="e#25#38#0" expanded="true" />
+            <element signature="e#182#652#0" expanded="true" />
+            <element signature="e#844#919#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/alien_invasion/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="423">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="e#103#641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alien_invasion/alien.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="31" column="89" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="89" />
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+            <element signature="e#168#586#0" expanded="true" />
+            <element signature="e#618#682#0" expanded="true" />
+            <element signature="e#887#1088#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alien_invasion/alien_invasion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+            <element signature="e#198#932#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/alien_invasion/game_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="286">
+          <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
           <folding>
             <element signature="e#25#35#0" expanded="true" />
-            <element signature="e#500#650#0" expanded="true" />
-            <element signature="e#711#1032#0" expanded="true" />
-            <element signature="e#1094#1318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alien_invasion/bullet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#38#0" expanded="true" />
-            <element signature="e#182#652#0" expanded="true" />
-            <element signature="e#684#807#0" expanded="true" />
-            <element signature="e#844#919#0" expanded="true" />
+            <element signature="e#197#524#0" expanded="true" />
+            <element signature="e#569#719#0" expanded="true" />
+            <element signature="e#780#1101#0" expanded="true" />
+            <element signature="e#1171#1442#0" expanded="true" />
+            <element signature="e#1478#1655#0" expanded="true" />
+            <element signature="e#1714#1904#0" expanded="true" />
+            <element signature="e#1963#2949#0" expanded="true" />
+            <element signature="e#3007#3185#0" expanded="true" />
+            <element signature="e#3265#3542#0" expanded="true" />
+            <element signature="e#3609#3800#0" expanded="true" />
+            <element signature="e#3846#3930#0" expanded="true" />
+            <element signature="e#3981#4144#0" expanded="true" />
           </folding>
         </state>
       </provider>
