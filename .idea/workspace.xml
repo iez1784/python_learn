@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aeb8666-3214-4702-acbc-60b5c9ccadd9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alien_invasion/button.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alien_invasion/game_stats.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alien_invasion/scoreboard.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/alien_invasion.py" afterPath="$PROJECT_DIR$/alien_invasion/alien_invasion.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/game_functions.py" afterPath="$PROJECT_DIR$/alien_invasion/game_functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/game_stats.py" afterPath="$PROJECT_DIR$/alien_invasion/game_stats.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/settings.py" afterPath="$PROJECT_DIR$/alien_invasion/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alien_invasion/ship.py" afterPath="$PROJECT_DIR$/alien_invasion/ship.py" />
     </list>
     <ignored path="python_learn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python_learn$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1534586167780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invasion" />
+    <SUITE FILE_PATH="coverage/python_learn$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1534849885464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invasion" />
     <SUITE FILE_PATH="coverage/python_learn$Charpter_2_First_Python_Program.coverage" NAME="Charpter_2_First_Python_Program Coverage Results" MODIFIED="1533880742753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DiveIntoPython/Chapter_2_First_Python_Program" />
     <SUITE FILE_PATH="coverage/python_learn$game_functions.coverage" NAME="game_functions Coverage Results" MODIFIED="1534328746370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invasion" />
     <SUITE FILE_PATH="coverage/python_learn$charpter_4_Action_List.coverage" NAME="charpter_4_Action_List Coverage Results" MODIFIED="1529377233155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PythonCrashCourse/Charpter_4_Action_List" />
@@ -35,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="alien_invasion.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alien_invasion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alien_invasion/alien_invasion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
               </folding>
@@ -50,11 +49,26 @@
       <file leaf-file-name="game_stats.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alien_invasion/game_stats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="323">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding>
-                <element signature="e#110#243#0" expanded="true" />
-                <element signature="e#280#359#0" expanded="true" />
+                <element signature="e#110#271#0" expanded="true" />
+                <element signature="e#308#433#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scoreboard.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/alien_invasion/scoreboard.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+              <folding>
+                <element signature="e#145#528#0" expanded="true" />
+                <element signature="e#999#1202#0" expanded="true" />
+                <element signature="e#1243#1694#0" expanded="true" />
+                <element signature="e#1730#2050#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,9 +104,13 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alien_invasion/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="347">
+              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+              <folding>
+                <element signature="e#103#818#0" expanded="true" />
+                <element signature="e#873#1122#0" expanded="true" />
+                <element signature="e#1162#1446#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,27 +118,27 @@
       <file leaf-file-name="game_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alien_invasion/game_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="33" column="72" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="72" />
+            <state relative-caret-position="277">
+              <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
               <folding>
                 <element signature="e#25#35#0" expanded="true" />
                 <element signature="e#246#573#0" expanded="true" />
                 <element signature="e#618#768#0" expanded="true" />
-                <element signature="e#857#1395#0" expanded="true" />
-                <element signature="e#1505#1825#0" expanded="true" />
-                <element signature="e#1916#2279#0" expanded="true" />
-                <element signature="e#2350#2606#0" expanded="true" />
-                <element signature="e#2691#2932#0" expanded="true" />
-                <element signature="e#2993#3183#0" expanded="true" />
-                <element signature="e#3242#4228#0" expanded="true" />
-                <element signature="e#4286#4464#0" expanded="true" />
-                <element signature="e#4544#4821#0" expanded="true" />
-                <element signature="e#4888#5079#0" expanded="true" />
-                <element signature="e#5154#5489#0" expanded="true" />
-                <element signature="e#5540#5703#0" expanded="true" />
-                <element signature="e#5758#5906#0" expanded="true" />
-                <element signature="e#5978#6340#0" expanded="true" />
-                <element signature="e#6422#6665#0" expanded="true" />
+                <element signature="e#1517#2132#0" expanded="true" />
+                <element signature="e#2225#2609#0" expanded="true" />
+                <element signature="e#2691#2958#0" expanded="true" />
+                <element signature="e#3055#3592#0" expanded="true" />
+                <element signature="e#3651#3841#0" expanded="true" />
+                <element signature="e#3900#4886#0" expanded="true" />
+                <element signature="e#4944#5122#0" expanded="true" />
+                <element signature="e#5202#5479#0" expanded="true" />
+                <element signature="e#5546#5737#0" expanded="true" />
+                <element signature="e#5812#6147#0" expanded="true" />
+                <element signature="e#6198#6361#0" expanded="true" />
+                <element signature="e#6416#6564#0" expanded="true" />
+                <element signature="e#6636#7036#0" expanded="true" />
+                <element signature="e#7118#7361#0" expanded="true" />
+                <element signature="e#7401#7527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,11 +202,12 @@
         <option value="$PROJECT_DIR$/alien_invasion/bullet.py" />
         <option value="$PROJECT_DIR$/alien_invasion/alien.py" />
         <option value="$PROJECT_DIR$/alien_invasion/ship.py" />
+        <option value="$PROJECT_DIR$/alien_invasion/button.py" />
         <option value="$PROJECT_DIR$/alien_invasion/settings.py" />
         <option value="$PROJECT_DIR$/alien_invasion/game_stats.py" />
-        <option value="$PROJECT_DIR$/alien_invasion/button.py" />
         <option value="$PROJECT_DIR$/alien_invasion/game_functions.py" />
         <option value="$PROJECT_DIR$/alien_invasion/alien_invasion.py" />
+        <option value="$PROJECT_DIR$/alien_invasion/scoreboard.py" />
       </list>
     </option>
   </component>
@@ -618,8 +637,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1432" y="-8" width="1456" height="876" extended-state="7" />
-    <editor active="false" />
+    <frame x="1432" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.256447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -901,25 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alien_invasion/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alien_invasion/game_stats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#110#243#0" expanded="true" />
-            <element signature="e#280#359#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/alien_invasion/button.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -931,39 +931,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/alien_invasion/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <folding>
+            <element signature="e#103#818#0" expanded="true" />
+            <element signature="e#873#1122#0" expanded="true" />
+            <element signature="e#1162#1446#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alien_invasion/game_stats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="e#110#271#0" expanded="true" />
+            <element signature="e#308#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/alien_invasion/game_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="33" column="72" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="72" />
+        <state relative-caret-position="277">
+          <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
           <folding>
             <element signature="e#25#35#0" expanded="true" />
             <element signature="e#246#573#0" expanded="true" />
             <element signature="e#618#768#0" expanded="true" />
-            <element signature="e#857#1395#0" expanded="true" />
-            <element signature="e#1505#1825#0" expanded="true" />
-            <element signature="e#1916#2279#0" expanded="true" />
-            <element signature="e#2350#2606#0" expanded="true" />
-            <element signature="e#2691#2932#0" expanded="true" />
-            <element signature="e#2993#3183#0" expanded="true" />
-            <element signature="e#3242#4228#0" expanded="true" />
-            <element signature="e#4286#4464#0" expanded="true" />
-            <element signature="e#4544#4821#0" expanded="true" />
-            <element signature="e#4888#5079#0" expanded="true" />
-            <element signature="e#5154#5489#0" expanded="true" />
-            <element signature="e#5540#5703#0" expanded="true" />
-            <element signature="e#5758#5906#0" expanded="true" />
-            <element signature="e#5978#6340#0" expanded="true" />
-            <element signature="e#6422#6665#0" expanded="true" />
+            <element signature="e#1517#2132#0" expanded="true" />
+            <element signature="e#2225#2609#0" expanded="true" />
+            <element signature="e#2691#2958#0" expanded="true" />
+            <element signature="e#3055#3592#0" expanded="true" />
+            <element signature="e#3651#3841#0" expanded="true" />
+            <element signature="e#3900#4886#0" expanded="true" />
+            <element signature="e#4944#5122#0" expanded="true" />
+            <element signature="e#5202#5479#0" expanded="true" />
+            <element signature="e#5546#5737#0" expanded="true" />
+            <element signature="e#5812#6147#0" expanded="true" />
+            <element signature="e#6198#6361#0" expanded="true" />
+            <element signature="e#6416#6564#0" expanded="true" />
+            <element signature="e#6636#7036#0" expanded="true" />
+            <element signature="e#7118#7361#0" expanded="true" />
+            <element signature="e#7401#7527#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/alien_invasion/alien_invasion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
             <element signature="e#25#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alien_invasion/scoreboard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <folding>
+            <element signature="e#145#528#0" expanded="true" />
+            <element signature="e#999#1202#0" expanded="true" />
+            <element signature="e#1243#1694#0" expanded="true" />
+            <element signature="e#1730#2050#0" expanded="true" />
           </folding>
         </state>
       </provider>
