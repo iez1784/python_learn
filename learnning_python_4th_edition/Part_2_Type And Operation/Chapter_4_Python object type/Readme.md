@@ -1,4 +1,4 @@
-### 第4章 介绍Python对象类型 (P120 - P150)
+### 第4章 介绍Python对象类型 (P120 - P149)
 - 从非正式的角度来说
   - 在Python中，我们使用一些东西在做事情
   - "事情"采用的是像加法以及连接这样的操作形式，而"东西"指的变是我们操作的对象
@@ -471,17 +471,636 @@ IndexError: list assignment index out of range
 - 串联起索引操作可以逐层深入地获取嵌套的对象结构
 
 
+#### 列表解析
+- 处理序列的操作和列表的方法中，Python还包括了一个更高级的操作，称作列表解析表达式(list comprehension expression), 从而提供了一种处理像矩阵这样结构的强大工具
+
+###### 从列举的矩阵中提取出第二列，因为矩阵是按照行进行存储的，所以通过简单的索引即可获取行
+```python
+>>> col2 = [row[1] fro row in M]              # Collect the items in column 2
+>>> col2
+[2, 5, 8]
+
+>>> M
+[[1,2,3],[4,5,6],[7,8,9]]                     # The matrix is unchanged
+```
+- 列表解析源自集合的概念
+- 它是一种通过对序列中的每一项运行一个表达式来创建一个新列表的方法，每次一个，从左至右
+- 列表解析是编写在方括号中的(提醒你在创建列表这个事实)，并且由使用了同一个变量名的(这里是row)表达式和循环结构组成
+- 之前的这个列表解析表达基本上就是它字面上所讲的: "把矩阵M的每个row中的row[1]，放在一个新的列表中"。其结果就是一个包含了矩阵的第二列的新列表
+
+##### 实际应用中的列表解析可以更复杂:
+```python
+>>> [row[1] + 1 for row in M]                # Add 1 to each item in column 2
+[3, 6, 9]
+
+>>> [row[1] for row in M if row[1] % 2 == 0]     # Filter out odd items
+[2, 8]
+```
+- 第一个操作: 把它搜集到的每一个元素都加了1
+- 第二个使用了一个if条件语句，通过使用%求余表达式(取余数)过滤了结果中的奇数
+- 列表解析创建了新的列表作为结果，但是能够在任何迭代的对象上进行迭代
+
+##### 列表解析去步进坐标的一个硬编码表表和一个字符串:
+```python
+>>> diag = [M[i][i] for i in [0, 1, 2]]             # Collect a diagonal from matrix
+>>> diag
+[1, 5, 9]
+
+>>> doubles = [c * 2 for c in 'spam']               # Repeat characters in a string
+>>> doubles
+['ss', 'pp', 'aa', 'mm']
+```
+
+##### 括号中的解析语法也可以用来创建产生所需要结果的生成器
+- 例如: 内置的sum函数， 按一种顺序汇总各项
+```python
+>>> G = (sum(row) for row in M)
+>>> next(G)
+6
+>>> next(G)
+15
+```
+- 内置函数map可以做类似的事情，产生对各项运行一个函数的结果
+```python
+>>> list(map(sum, M))                             # Map sum over iteams in M
+[6, 15, 24]
+```
+- 解析语法也可以用来创建集合和字典
+```python
+>>> {sum(row) for row in M}                      # Create a set of row sums
+{24, 6, 15}
+
+>>> {i : sum(M[i] for i in range(3)}             # Creates key/value table of row sums
+{0: 6, 1: 15, 2: 24}
+```
+
+##### 实际上， Python 3.0中， 列表、 集合和字典都可以用来解析来创建:
+```python
+>>> [ord(x) for x in 'spaam']                  # List of character ordinals
+[115, 112, 97, 97, 109]
+
+>>> {ord(x) for x in 'spaam'}                  # Sets remove duplicates
+{112, 97, 115, 109}
+
+>>> {x: ord(x) for x in 'spaam'}               # Dictionary keys are unique
+{'a': 97, 'p': 112, 's': 115, 'm': 109}
+
+### 字典
+- Python中的字典是完全不同的东西
+  - 它们不是序列，而是一种映射(mapping)
+  - 映射是一个其他对象的集合，但是它们是通过键而不是相对位置来存储的
+  - 映射并没有任何可靠的从左至右的顺序
+  - 它们简单地将键映射到值
+  - 字典是Python核心对象集合中的唯一的一种映射类型，也具有可变性--可以就地改变，并可以随需求增大或减小，就像列表那样
+
+#### 映射操作
+- 作为常量编写时，字典编写在大括号中，并包含一系列的"键:值"
+- 我们需要将键与一系列值相关联(例如，为了表述某物的某属性)的时候，字典是很有用的
+
+```python
+>>> D = {'food': 'Spam', 'quantity':4, 'color': 'pink'}
+```
+- 可以通过键对这个字典进行索引来读取或改变键所关联的值
+- 字典的索引操作使用的是和序列相同的语法，但是在方括号中的元素是键，而不是相对位置
+
+```python
+>>> D['food']                   # Fetch value of key 'food'
+'Spam'
+
+>>> D['quantity'] += 1          # Add 1 to 'quantity' value
+>>> D
+{'food': 'Spam', 'color': 'pink', 'quantity': 5}
+```
+
+##### 不同的创建字典的方法
+###### 1
+- 开始一个空的字典，然后每次以一个键来填写它
+- 与列表中禁止边界外的赋值不同，对一个新的字典的键赋值会创建该键
+```python
+>>> D ={}
+>>> D['name'] = 'Bob'
+>>> D['job'] = 'dev'
+>>> D['age'] = 40
+
+>>> D
+{'age': 40, 'job': 'dev', 'name': 'Bob'}
+
+>>> print(D['name'])
+Bob
+```
+- 在这里，我们实际上使用字典的键，如描述某人的记录中的名字字段
+- 在另一个应用中，字典也可以用来执行搜索
+- 通过键索引一个字典往往是Python中编写搜索的最快方法
+
+#### 重访嵌套
+- 上例中，我们使用字典去描述一个假设的人物，用了三个键
+- 假设信息更复杂一些，也许我们需要去记录名(first name)和姓(last name)，并有多个工作(job)的头衔
+- 产生了另一个Python对象嵌套的应用
+
+```python
+>>> rec = {'name': {'first': 'Bob', 'last': 'Smith'},
+           'job': ['dev', 'mgr'],
+           'age': 40.5}
+```
+- 这里，顶层再次使用了三个键的字典(键分别是"name"、"job"和"age")
+- 一个嵌套的字典作为name的值，支持了多个部分，并用一个嵌套的列表作为job的值从而支持多个角色和未来的扩展
+- 能够获取这个结构的组件，就像之前在矩阵中所做的那样，但是这次索引的是字典的键，而不是列表的偏移量
+```python
+>>> rec['name']                        # 'name' is a nested dictionary
+{'last': 'Smith', 'first': 'Bob'}
+
+>>> rec['name']['last']                # Index the nested dictionary
+'Smith'
+
+>>> rec['job']                         # 'job' is a nested list
+['dev', 'mgr']
+>>> rec['job'][-1]                     # Index the nested list
+'mgr'                                           
+
+>>> rec['job'].append('janitor')       # Expand Bob's job description in-place
+>>> rec
+{'age': 40.5, 'job': ['dev','mgr','janitor'], 'name': {'last': 'Smith', 'first': 'Bob'}}
+```
+- 注意最后一个操作是如何扩展嵌入job列表的。因为job列表是字典所包含的一部分独立的内存，它可以自由地增加或减少
+- Python核心数据类型的灵活性
+- 嵌套允许直接并轻松地建立复杂的信息结构
+- 使用C这样的底层语言建立一个类似的结构，将会很枯燥并会使用更多的代码-我们将不得不事先安排并且声明结构和数组， 填写值，将每一个都连接起来等，在Python中，这所有的一切都是自动完成的-运行表达式创建了整个的嵌套对象结构
+- Python这样的脚本语言的主要优点这一
+- 同样重要的是，在底层语言中，当我们不再需要该对象时，必须小心地去释放掉所有对象空间
+- 在Python中，当最后一次引用对象后(例如，将这个变量用其他的值进行赋值)，这个对象所占用的内存空间将会自动清理掉:
+
+```python
+>>> rec=0                      # Now the object's space is reclaimed
+```
+- 从技术上讲, Python具有一种叫做垃圾收集的特性，在程序运行时可以清理不再使用的内存，并将你从必须管理代码中这样的细节中解放出来
+- 在Python中，一旦一个对象的最后一次引用被移除，空间将会立即回收
+
+### 键的排序: for 循环
+- 作为映射，字典仅支持通过键获取元素
+- 在各种常见的应用场合，通过调用方法，它们也支持类型特定的操作
+- 因为字典不是序列，它们并不包含任何可靠的从左至右的顺序。这意味着如晨我们建立一个字典，并将它打印出来，它的键也许会以与我们输入时不同的顺序出现
+
+```python
+>>> D = {'a': 1, 'b': 2, 'c': 3}
+>>> D
+{'a': 1, 'c': 3, 'b': 2}
+```
+- 如果在一个字典的元素中，我们确实需要强调某种顺序的时候，应该怎样做呢？一个常用的解决办法就是通过字典的keys方法收集一个键的列表，使用列表的sort方法进行排序，然后使用Python的for循环逐个进行显示结果
+
+```python
+>>> Ks = list(D.keys())              # Unordered keys list
+>>> Ks                               # A list in 2.6, "view" in 3.0: use list()
+['a', 'c', 'b']
+
+>>> Ks.sort()                        # Sorted keys list
+>>> Ks
+['a', 'b', 'c']
+
+>>> for key in Ks:                          # Iterate though sorted keys
+        print(key, '=>', D[key])            # <== press Enter twice here
+a => 1
+b => 2
+c= > 3
+```
+- sorted 调用返回结果并对各种对象类型进行排序， 自动对字典的键排序：
+
+##### 打印这个自身是无序的字典的键和值，以排好序的键和顺序输出
+```python
+>>> D
+{'a': 1, 'c': 3, 'b':L 2}
+
+>>> for key in sorted(D):
+        print(key, '=>', D[key])
+
+a => 1
+b => 2
+c => 3
+```
+- for循环是遍历一个序列中的所有元素并按顺序对每一元素运行一些代码的简单并有效的一种方法
+- 一个用户定义的循环变量(这里是key)用作每次运行过程中当前元素的参考量
+- for循环以及其作用相近的while循环，是在脚本中编写重复性任务语句的主要方法
+- for循环主像列表解析一样是一个序列操作
+- 它可以使用在任意一个序列对象，并且就像列表解析一样，甚至可以用在一些不是序列的对象中
+
+##### for循环可以步进循环字符串中的字符，打印每个字符的大写
+```python
+>>> for c in 'spam':
+        print(c.upper())
+S
+P
+A
+M
+```
+- Python的while循环是一种更为常见的排序循环工具，它不仅限于遍历序列
+```python
+>>> x = 4
+>>> while x > 0:
+        print('spam!' * x)
+        x -= 1
+spam!spam!spam!spam!
+spam!spam!spam!
+spam!spam!
+spam!
+```
+
+### 迭代和优化
+- 如果for循环看起来就像之前介绍的列表解析表达式一样，那也没错。它们都是真正的通用迭代工具
+- 事实上，它们都能够工作于遵守迭代协议(这是Python中无处不在的一个概念，表示在内存中物理存储的序列，或一个在迭代操作情况下每次产生一个元素的对象)的任意对象
+- 如果一个对象在响应next之前先用一个对象对iter内置函数做出响应，那么它就属于后一种情况.我们在前面所见到的生成器解析表达式就是这样的一个对象
+- 从左到右地扫描一个对象的每个Python工具都使用迭代协议
+
+##### 意味着像下面这样的任何列表解析表达式都可以计算一列数字的平方
+```python
+>>> squares = [x ** 2 for x in [1, 2, 3, 4, 5]]
+>>> squares
+[1, 4, 9, 16, 25]
+```
+
+##### 能够编写成一个等效的for循环，通过在运行时手动增加列表来创建最终的列表
+```python
+>>> squares = []
+>>> for x in [1, 2, 3, 4, 5]:
+        squares.append(x ** 2)
+>>> squares
+[1, 4, 9, 16, 25]
+```
+- 列表解析和相关的函数编程工具，如map和filter，通常运行得比for循环快(也许快了两倍): 这是对有大数据集合的程序有重大影响的特性这一
+- 在Python中性能测试是一个很难应付的任务，因为它在反复地优化
+- Python中的一个主要的原则就是，首先为了简单和可读性去编写代码，在程序可以工作，并证明了确实有必要考虑性能后，再考虑该问题
+- 如果确实需要提高代码的性能，Python提供了帮助你实现的工具，包括time以及timeit模块和profile模块
+
+### 不存在的键: if 测试
+- 尽管我们能够通过给新的键赋值来扩展字典，但是获取一个不存在的键值仍然是一个错误
+```python
+>>> D
+{'a': 1, 'c': 3, 'b': 2}
+
+>>> D['e'] = 99                                  # Assigning new keys grows dictionaries
+>>> D
+{'a': 1, 'c': 3, 'b': 2, 'e': 99}
+
+>>> D['f']                                       # Referencing a nonexistent key is an error
+...error text omitted...
+KeyError: 'f'
+```
+- 获取一个并不存在的东西往往是一个程序错误
+- 在一些通用程序中，我们编写程序时并不是总知道当前存在什么键
+- 在这种情况下，我们如何处理并避免错误发生呢?
+  - 一个技巧是首先进行测试
+  - in关系表达式允许我们查询字典中一个键是否存在，并可以通过使用Python的if语句对结果进行分支处理
+
+```python
+>>> 'f' in D
+False
+
+>>> if not 'f' in D:
+       print('missing')
+
+missing
+```
+- 上例包含关键字if，紧跟着一个其结果为真或假的表达式，如果测试的结果是真的话将运行一些代码
+- 其他的方法来创建字典并避免获取不存在的字典键: 
+  - get方法(带有一个默认值的条件索引)
+  - Python 2.X的has_key方法(Python 3.0中不可用)
+  - try语句(一个捕获异常并从异常中恢复的工具)
+  - if/else表达式
+
+```python
+>>> value = D.get('x', 0)                       # Index but with a default
+>>> value
+0
+>>> value = D['x'] if 'x' in D else 0           # if/else expression form
+>>> value
+0
+```
+
+### 元组
+- 元组对象(tuple，发音为"toople" 或"tuhple")，其本上就像一个不可能改变挺不错表
+- 像列表一样，元组是序列，但是它具有不可变性，和字符串类似
+- 从语法上讲，它们编写在圆括号中而不是方括号中
+- 它们支持任意类型、任意嵌套以及常见的序列操作
+
+```python
+>>> T = (1, 2, 3, 4)                     # A 4-item tuple
+>>> len(T)                               # Length
+4
+
+>>> T + (5,6)                            # Concatenation
+(1,2,3,4,5,6)
+
+>>> T[0]                                 # Indexing, slicing, and more
+1
+```
+
+- 在Python 3.0中，元组还有两个专有的可调用方法，但它的专有方法不像列表所拥有的那么多
+```python
+>>> T.index(4)                           # Tuple methods: 4 appears at offset 3
+3
+>>> T.count(4)                           # 4 appears once
+1
+```
+- 元组的真正不同之处就在于一旦创建后就不能再改变。元组是不可变的序列
+```python
+>>> T[0] = 2                             # Tuples are immutable
+...error text omitted...
+TypeError: 'tuple' object does not support item assignment
+```
+- 与列表和字典一样，元组支持混合的类型和嵌套，但是不能增长或缩短，它们是不可变的
+```python
+>>> T = ('spam', 3.0, [11, 22, 33])
+>>> T[1]
+3.0
+>>> T[2][1]
+22
+>>> T.append(4)
+AttributeError: 'tuple' object has no attribute 'append'
+```
+
+#### 为会要用元组
+- 元组在实际中往往并不像列表这样常用，但是它的关键是不可变性
+- 如果在程序中以列表的形式传递一个对象的集合，它可能在任何地方改变;如果使用元组的话，则不能
+- 元组提供了一种完整性的约束，这对于我们这里所编写的更大型的程序来说是方便的
 
 
-P134
+### 文件
+- 文件对象是Python代码对电脑上外部文件的主要接口
+- 文件是核心类型，有些特殊:
+  - 没有特定的常量语法创建文件
+  - 要创建一个文件对象，需调用内置的open函数以字符串的形式传递给它一个外部的文件名以及一个处理模式的字符吕
+
+##### 创建一个文本输出文件
+- 可以传递其文件名
+- 以及'w'处理模式字符串以写数据
+```python
+>>> f = open('data.txt', 'w')          # Make a new file in output mode
+>>> f.write('Hello\n')                 # Write strings of bytes to it
+6
+>>> f.write('world\n')                 # Returns number of bytes written in Python 3.0
+6
+>>> f.close()                          # Close to flush output buffers to disk
+```
+- 在当前文件夹下创建了一个文件，并向它写入文本
+  - 文件名可以是完整的路径，如果需要读取电脑上其他位置的文件
 
 
+- 为了读出刚才所写的内容，重新以'r'处理模式打开文件，读取输入
+- 之后将文件的内容读至一个字符串，并显示它
+- 对脚本而言，文件的内容总是字符串，无论文件包含的数据是什么类型
+
+```PYTHON
+>>> f = open('data.txt')              # 'r' is the default processing mode
+>>> text = f.read()                   # Read entire file into a string
+>>> text
+'Hello\nworld\n'
+
+>>> print(text)                       # print interprets control characters
+Hello
+world
+
+>>> text.split()                      # File content is always a string
+['Hello', 'world']
+```
+- 文件对象提供了多种读和写的方法(read可以接受一个字节大小的选项，readline每次读一行等)，以及其他的工具(seek移动到一个新文件位置)
+- 如今读取一个文件的最佳方式就是根本不读它，文件提供了一个迭代器(iterator)， 它在for循环或其他环境中自动地一行一行地读取
+
+##### 快速查看文件方法
+- 在任何打开的文件上运行一个dir调用并且在返回的任何方法名上调用一个help
+```python
+>>> dir(f)
+[...many names omitted...
+'buffer', 'close','closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 
+'line_buffering', 'mode', 'name', 'newlines', 'read', 'readable', 'readline',
+'readlines', 'seek', 'seekable', 'tell', 'truncate', 'writeable', 'write',
+'writelines']
+
+>>>help(f.seek)
+...tyr it and see...
+```
+
+- Python 3.0中的文件在文本和二进制数据之间划出了一条清晰的界限
+- 文本文件把内容显示为字符串，并且自动执行Unicode编码和解码
+- 二进制文件把内容显示为一个物定的字节字符串类型，并且允许你不修改地访问文件内容
+
+```python
+>>> data = open('data.bin', 'rb').read()       # Open binary file
+>>> data                                       # bytes string holds binary data
+b'\x00\x00\x00\x07spam\x00\x08'
+>>> data[4:8]
+b'spam
+```
+
+### 其他文件类工具
+- opoen函数能够实现在Python中编写的绝大多数文件处理
+- 更高级的任务，Python还有额外的类文件工具: 
+  - 管道
+  - 先进先出队列(FIFO)
+  - 套接字
+  - 通地键访问文件
+  - 对象持久
+  - 基于描述符的文件
+  - 关系数据库和面向对象数据库接口等
+- 描述符文件(descriptor file) 支持文件锁定和其他的底层工具
+- 套接字提供网络和进程间通信的接口
+
+### 其他核心类型
+- 集合是最近增加到这门语言中的类型，它不是映射也不是序列，相反，它们是唯一的不可变的对象的无序集合
+- 集合可以通过调用内置set函数而创建，或者使用Python 3.0中新的集合常量和表达式创建，并且它支持一般的数学集合操作
+```python
+>>> X = set('spam')                 # Make a set out of a sequence in 2.6 and 3.0
+>>> Y = {'h', 'a', 'm'}             # Make a set with new 3.0 set literals
+>>> X,Y
+({'a','p','s','m'},{'a','h','m'})
+
+>>> X & Y                           # Intersection
+{'a', 'm'}
+
+>>> X | Y                           # Union
+{'a', 'p', 's', 'h', 'm'}
+
+>>> X - Y                           # Difference
+{'p', 's'}
+
+>>> {x ** 2 for x in [1,2,3,4]}     # Set comprehensions in 3.0
+{16, 1, 4, 9}
+```
+
+- Python最近添加了一些新的数值类型
+  - 十进制数(固定精度浮点数)
+  - 分数(有一个分子和一个分母的有理数)
+  - 它们都用来解决浮点数学的局限性和内在的不精确性
+
+```python
+>>> 1/3                           # Floating-point (use.0 in Python 2.6)
+0.33333333333333331
+
+>>> (2/3) + (1/2)         
+1.1666666666666665
+
+>>> import decimal                # Decimals: fixed precision 
+>>> d = decimal.Decimal('3.141')
+>>> d + 1
+Decimal('4.141')
+
+>>> decimal.getcontext().prec = 2
+>>> decimal.Decimal('1.00') / decimal.Decimal('3.00')
+Decimal('0.33')
+
+>>> from fractions import Fraction             # Fractions: numerator + denominator
+>>> f = Fraction(2, 3)
+>>> f + 1
+Fraction(5, 3)
+>>> f + Fraction(1,2)
+Fraction(7,6)
+
+- Python还添加了布尔值(预定义的True和False对象实际上是定制后以逻辑结果显示的整数1和0)
+- 以及长期以来一直支持特殊的占位符对象None(它通常用来初始化名字和对象)
+```python
+>>> 1 > 2, 1 < 2                     # Booleans
+(False, True)
+>>> bool('spam')
+True
+
+>>> X = None                         # None placeholder
+>>> print(X)
+None
+
+>>> L = [None] * 100                 # Initialize a list of 100 Nones
+>>> L
+[None,None,None,None,None,None,None,None,None,None,None,None,None,None,
+None,None,None,None,None,None,None,... a lisft of 100 Nones...]
+```
 
 
+### 如何破坏代码的灵活性
+- 值得注意：内置函数type返回的类型对象是赋给该类型的另一个对象的一个对象
+- 其结果在Python 3.0中略有不同，因为类型己经完全和类结合起来了
+```python
+# In Python 2.6:
 
+>>> type(L)                # Types: type of L is list type object
+<type 'list'>
+>>> type(type(L))          # Even types are objects
+<type 'type'>
+
+# In Python 3.0: 
+>>> type(L)                # 3.0: types are classes, and vice versa
+<class 'list'>
+>>> type(type(L))          # See Chapter 31 for more on class types
+<class 'type'>
+```
+- 除了允许交互地探究对象，这个函数的实际应用是，允许编写代码来检查它所处理的对象的类型
+- 在Python脚本中至少有3种方法可做到这点:
+
+```python
+>>> if type(L) == type([]):         # Type testing, if you must...
+        print('yes')
+yes
+>>> if type(L) == list:             # Using the type name
+        print('yes')
+yes
+>>> if isinstance(L, list):         # Object-oriented tests
+        print('yes')
+yes
+```
+
+#### 在代码中检验了特定的类型，实际上破坏了它的灵活性，即限制它只能使用一种类型工作。没有这样的检测，代码也许能够使用整个范围的类型工作
+#### 这与前边我们讲到的多态的思想有些关联，它是由Python没有类型声明而发展起来的
+
+- 在Python中，我们编写对象接口(所支持的操作)而不是类型
+- 不关注于特定的类型意味着代码会自动地适应它们中的很多类型: 任何具有兼容接口的对象均能够工作，而不管它是什么对象类型
+- 尽管支持类型检测(即使在一些极少数的情况下，这是必要的)， 冷饮瘵会看到它并不是一个"Python式"的思维方法
+- 多态也是使用Python的关键思想
+
+### 用户定义的类
+- 用抽象的术语来说，类定义了新的对象类型，扩展了核心类型
+
+###### 假如你希望有一个对象类型对职员进行建模。尽管Python里没有这样特定的核心类型，下边这个用户定义的类或许符合你的需求:
+
+```python
+>>> class Worker:
+          def __init__(self, name, pay):              # Initialize when created
+              self.name = name                        # self is the new object
+              self.pay = pay
+          
+          def lastName(self):
+              return self.name.split()[-1]            # Split string on blanks
+          
+          def giveRaise(self, percent):        
+              self.pay *= (1.0 + percent)             # Update pay in-place
+```
+
+- 这个类定义了一个新的对象的种类，有name和pay两个属性(有时候叫做状态信息)
+- 也有两个小的行为编写函数(通常叫做方法)的形式
+- 就像函数那样去调用类，会生成我们新类型的实例，并且类的方法调用时，类的方法自动获取被处理的实例(其中的self参数)
+
+```python
+>>> bob = Worker('Bob Smith', 50000)                 # Make two instances
+>>> sue = Worker('Sue Jones', 60000)                 # Each has name and pay attrs
+>>> bob.lastName()                                   # Calle method: bob is self
+'Smith'
+>>> sue.lastName()                                   # sue is the self subject
+'Jones'
+>>> sue.giveRaise(.10)                               # Update sue's pay
+66000.0
+```
+
+- 隐含的"self"对象是我们把这叫做面向对象模型的原因，即一个类中的函数总有一个隐含的对象
+- 一般来说，尽管这样，基于类的类型是建立在并使用了核心类型的
+
+### 剩余的内容
+- Python脚本能够处理的所有的事情都是某种类型的对象
+- 在Python中的每样东西都是一个"对象"， 只有我们目前所见到的那些对象类型才被认为是Python核心类型集合中的一部分
+- 其他Python中的类型有的是与程序执行相关的对象(如函数、模块、类和编译过的代码)
+- 我们现在学过的对象仅是对象而己，并不一定是面向对象。面向对象是一种往往要求有继承和Python类声明的概念
+
+
+### 本章小结
+- 介绍了Python核心对象类型，以及可以对它们进行的一些操作
+- 学习了一些能够用于许多对象类型的一般操作 (比如：索引和分片这样的序列操作)
+- 可以作为方法调用的特定类型操作 (比如：字符串分隔和列表增加)
+- 在学习的过程中己经定义了一些关键的术语。比如: 不可变性、序列和多态
+
+
+### 本章习题
+1. 列举4个Python核心类型的名称
+- 数字、字符串、列表、字典、元组、文件和集合一般被认为是核心对象(数据)类型
+- 类型、None和布尔型有时也被定义在这样的分类中
+- 还有多种数字类型(整数、浮点数、复数、分数和十进制数)
+- 多种字符串类型(Python 2.X中的一般字符串和Unicode字符串，以及Python 3.X中的文本字符串和字节字符串)
+
+2. 为什么我们把它们称作是"核心"数据类型
+- 它们被认作是"核心"类型是因为综们是Python语言自身的一部分，并有总是有效的
+- 为了建立其他的对象，通常必须调用被导入模块的函数
+- 大多数核心类型都有特定的语法去生成其对象:
+  - 例如 'spam'是一个创建字符串的表达式，而且决定了可以被应用的操作的集合
+- 正是因为这一点，核心类型与Python的语法紧密地结合在一起。与之相比较，必须调用内置的open函数去创建一个文件对象
+
+3. "不可变性" 代表了什么，哪三种Python的核心类型被认为是具有不可变性的
+- 一个具有"不可变性"的对象是一个在其创建以后不能够被改变的对象
+- Python中的数字、字符串和元组都属于这个分类
+- 尽管无法就地改变一个不可变的对象，但是你总是可以通过运行一个表达式创建一个新的对象
+
+4. "序列"是什么意思，哪三种Python的核心类型被认为是这个分类中的
+- 一个"序列"是一个对位置进行排序的对象的集合
+- 字符串、列表和元组是Python中所有的序列
+- 它们共同拥有一般的序列操作，例如: 索引、合并以及分片，但又各自有自己的类型特定的方法调用
+
+5. "映射" 是什么意思，哪种Python的核心类型是映射
+- 术语"映射"， 表示将键与相关值相互关联映射的对象
+- Python的字典是其核心类型集中唯一的映射类型
+- 映射没有从左至右的位置顺序
+- 它们支持通过键获取数据，并包含了类型特定的方法调用
+
+6. 什么是"多态"， 为什么我们要关心多态
+- "多态" 意味着一个操作符(如 +) 的意义取决于被操作的对象
+- 这将变成使用好Python的关键思想之一
+- 不要把代码限制在特定的类型上，使代码自动适用于多种类型
 
 
 
 ### 注1
 - 常量(literal)是指其语法会生成对象胡表达式，有时也叫做常数(constant)
 - 值得注意的是, "常数"不是指不可变的对象或变量(这个术语与在C++中的const，或Python中的"不可变"这个概念没有什么关系)
+
+### 注2
+- 当我们采用Python的对象持久化系统时(在文件或键值数据库中保存Python原生对象的简单方式)， 我们刚刚创建的rec记录，很有可能是数据库记录，可以参考Python的pickle和shelve模块的细节
