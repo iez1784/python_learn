@@ -40,14 +40,14 @@ def parse_date(datestring):
     dt = EPOCH + datetime.timedelta(seconds=adjustedseconds)
     return dt.strftime("%Y-%m-%dT%H:%M:%S") + '%02d:00' % hours
 
-ReferShipOutDate='/Date(253402243200000-0800)/'
-ticks = u'/Date(1526785274000-0700)/'
-ScheduleDate = "\/Date(1374811200000-0400)\/"
-StartTime = "\/Date(-2208931200000-0500)\/"
+EnterredDate="/Date(1540321814000+0000)/"
+LastEditDate =  "/Date(1540321814000+0000)/"
+#ScheduleDate = "\/Date(1374811200000-0400)\/"
+#StartTime = "\/Date(-2208931200000-0500)\/"
 
-print(parse_date(ticks))
-print(parse_date(ScheduleDate))
-print(parse_date(StartTime))
+print(parse_date(EnterredDate))
+print(parse_date(LastEditDate))
+#print(parse_date(StartTime))
 
 
 
