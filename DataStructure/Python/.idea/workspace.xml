@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf43910c-91de-4122-97c5-f072b97e8684" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_3.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Charpter_2_Collection overview/numberguess.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/readme.md" afterPath="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Charpter_2_Collection overview/readme.md" afterPath="$PROJECT_DIR$/Charpter_2_Collection overview/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../learnning_python_4th_edition/Part_2_Type And Operation/Chapter_5_Numbers/Readme.md" afterPath="$PROJECT_DIR$/../../learnning_python_4th_edition/Part_2_Type And Operation/Chapter_5_Numbers/Readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
