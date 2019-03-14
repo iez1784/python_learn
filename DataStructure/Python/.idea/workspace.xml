@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf43910c-91de-4122-97c5-f072b97e8684" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../learnning_python_4th_edition/Part_2_Type And Operation/Chapter_5_Numbers/Readme.md" afterPath="$PROJECT_DIR$/../../learnning_python_4th_edition/Part_2_Type And Operation/Chapter_5_Numbers/Readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_3.py" afterPath="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_3.py" />
     </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="program_3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32608697" vertical-offset="0" max-vertical-offset="414">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.2536232" vertical-offset="105" max-vertical-offset="570">
+              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -141,7 +140,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="recentsLimit" value="5" />
   </component>
-  <component name="RunManager" selected="Python.program_2">
+  <component name="RunManager" selected="Python.program_3">
     <configuration default="false" name="program_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -174,6 +173,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Python" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="program_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Python" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -302,14 +320,16 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.program_1" />
       <item index="1" class="java.lang.String" itemvalue="Python.program_2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.program_3" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.program_2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.program_1" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.program_3" />
+        <item index="1" class="java.lang.String" itemvalue="Python.program_2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.program_1" />
       </list>
     </recent_temporary>
   </component>
@@ -387,8 +407,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Charpter_1_Python_Programming_Basis/program_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32608697" vertical-offset="0" max-vertical-offset="414">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.2536232" vertical-offset="105" max-vertical-offset="570">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           <folding />
         </state>
       </provider>

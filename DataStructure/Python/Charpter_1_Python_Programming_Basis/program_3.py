@@ -9,3 +9,24 @@ __author__ = 'zhangedison'
 注意: 每次后续的弹跳运动的距离，都是到地板距离加上这个距离的0.6倍，这个0.6倍就是球反弹回来的距离
 编写一个程序，让用户输入球的一个初始以及允许球持续弹跳的次数。输出应该是球所运动的总距离
 """
+
+
+def distance():
+    init_heigh = input("please input the init heigh: ")
+    total_count = input("please input the total count: ")
+    init_heigh = float(init_heigh)
+    total_count = int(total_count)
+    sort_id = 0.6
+    total_distance = 0
+
+    for i in range(total_count):
+        total_distance += init_heigh + init_heigh * sort_id
+        init_heigh = init_heigh * sort_id
+
+
+    print("The total distance is: ", total_distance)
+
+
+if __name__ == '__main__':
+    distance()
+
